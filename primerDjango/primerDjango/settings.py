@@ -58,9 +58,9 @@ ROOT_URLCONF = 'primerDjango.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ BASE_DIR / 'templates'],
-        'APP_DIRS': True,
+        'BACKEND': 'django.template.backends.django.DjangoTemplates', #Motor de templates: por defecto es django.template pero podría ser jinja
+        'DIRS': [ BASE_DIR / 'templates'],#donde buscar los templates
+        'APP_DIRS': True,#con True va a buscar los templates dentro de cada aplicación. Si usamos el djangoadmins hay que ponerlo en True porque sino no lo va a cargar.
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
