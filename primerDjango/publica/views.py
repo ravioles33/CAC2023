@@ -14,7 +14,7 @@ def index(request):
         titulo = 'Titulo cuando por otro método'
         parametro_uno= request.GET.get('param')
         parametro_dos= request.GET.get('param2')
-    return render(request, 'publica/index.html')
+    return render(request, 'publica/index.html', {'titulo':titulo})
 #    return HttpResponse(f""" 
 #    <h1> DALE CHE actualizado 15/4/23 <h1/>
 #    <p>{titulo}</p>
