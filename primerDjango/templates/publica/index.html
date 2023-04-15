@@ -12,6 +12,14 @@
         <p>tetetest</p>
         <p>{{parametro_uno|default:"NO RECIBI NARA"}}</p>
         <p>{{hoy|date:'d-m-Y'}}</p>
+        <ul>
+            {% for curso in cursos %}
+            <li>
+                {{curso.nombre}} - {{curso.categoria}}
+                <p>{{curso.descripcion}}</p>
+            </li>
+            {% endfor %}
+        </ul>
     </main>
 </body>
 </html>
