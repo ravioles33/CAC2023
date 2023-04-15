@@ -16,7 +16,7 @@ def saludar(request, nombre): #request es una instancia de HttpRequest
         <p>Estoy haciendo una prueba </p>
     """)
 
-def ver_proyectos(request, anio,mes):
+def ver_proyectos(request, anio,mes=1):#pongo mes=1 para que su valor por defecto (si no recibe parámetro) sea 1
     return HttpResponse(f"""
         <h1>Proyectos del {mes}/{anio} </h1>
         <p>Listado de proyectos</p>
