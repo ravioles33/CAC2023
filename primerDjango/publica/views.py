@@ -14,7 +14,7 @@ def index(request):
         titulo = 'Titulo cuando accedo por GET' #esto me manda en la variable titulo
     else:
         titulo = 'Titulo cuando por otro método'
-        parametro_uno= request.GET.get('param')
+        parametro_uno= request.GET.get('param')#que tome de la petición get el parámetro param en la URL
         parametro_dos= request.GET.get('param2')
     return render(request, 'publica/index.html', 
                   {'titulo':titulo,
