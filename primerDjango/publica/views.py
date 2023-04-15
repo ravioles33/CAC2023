@@ -16,10 +16,13 @@ def index(request):
         titulo = 'Titulo cuando por otro método'
         parametro_uno= request.GET.get('param')#que tome de la petición get el parámetro param en la URL
         parametro_dos= request.GET.get('param2')
-    return render(request, 'publica/index.html', 
-                  {'titulo':titulo,
-                   #'parametro_uno':parametro_uno, ###Me tira error así que no lo paso
-                   'hoy':datetime.now()}) #parece que las nuevas versiones piden poner .now() en vez de sólo .now
+
+    context = {'titulo':titulo,
+                #'parametro_uno':parametro_uno, ###Me tira error así que no lo paso
+                'hoy':datetime.now()#parece que las nuevas versiones piden poner .now() en vez de sólo .now
+    }
+
+    return render(request, 'publica/index.html', context) 
 #    return HttpResponse(f""" 
 #    <h1> DALE CHE actualizado 15/4/23 <h1/>
 #    <p>{titulo}</p>
