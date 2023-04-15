@@ -18,7 +18,7 @@ def index(request):
         parametro_dos= request.GET.get('param2')
     return render(request, 'publica/index.html', 
                   {'titulo':titulo,
-                   'parametro_uno':parametro_uno,
+                   #'parametro_uno':parametro_uno, ###Me tira error así que no lo paso
                    'hoy':datetime.now})
 #    return HttpResponse(f""" 
 #    <h1> DALE CHE actualizado 15/4/23 <h1/>
