@@ -12,6 +12,7 @@
         <p>tetetest</p>
         <p>{{parametro_uno|default:"NO RECIBI NARA"}}</p>
         <p>{{hoy|date:'d-m-Y'}}</p>
+        {% if cursos|length > 0 %}
         <ul>
             {% for curso in cursos %}
             <li>
@@ -19,6 +20,9 @@
                 <p>{{curso.descripcion}}</p>
             </li>
             {% endfor %}
+            {% else %}
+                <p>No hay tales cursos</p>
+            {% endif %}
         </ul>
     </main>
 </body>
