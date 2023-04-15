@@ -11,4 +11,7 @@ def index(request):
     return HttpResponse('<h1> DALE CHE 2/4/23 </h1>')
 
 def saludar(request, nombre): #request es una instancia de HttpRequest
-    pass
+    return HttpResponse(f"""
+        <h1>Hola {nombre} </h1>
+        <p>Estoy haciendo una prueba </p>
+    """)
