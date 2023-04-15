@@ -21,3 +21,9 @@ def ver_proyectos(request, anio,mes=1):#pongo mes=1 para que su valor por defect
         <h1>Proyectos del {mes}/{anio} </h1>
         <p>Listado de proyectos</p>
     """)    
+
+def ver_proyectos_04_2023(request,): #ejemplo estático?
+    return HttpResponse(f"""
+        <h1>Proyectos del Abril 2023 </h1>
+        <p>Listado de proyectos</p>
+    """)   
