@@ -17,9 +17,28 @@ def index(request):
         parametro_uno= request.GET.get('param')#que tome de la petición get el parámetro param en la URL
         parametro_dos= request.GET.get('param2')
 
+    listado_cursos = [
+        {
+        'nombre': 'introducción a algo',
+        'descripcion': 'Lo que leiste',
+        'categoria': 'seguí la chafle',
+        },
+        {
+        'nombre': 'tuse',
+        'descripcion': 'ñora',
+        'categoria': 'todas',
+        },
+        {
+        'nombre': 'jejejej',
+        'descripcion': 'jojojojo',
+        'categoria': 'jujuju',
+        },
+    ]
+
     context = {'titulo':titulo,
                 #'parametro_uno':parametro_uno, ###Me tira error así que no lo paso
-                'hoy':datetime.now()#parece que las nuevas versiones piden poner .now() en vez de sólo .now
+                'hoy':datetime.now(),#parece que las nuevas versiones piden poner .now() en vez de sólo .now
+                'cursos':listado_cursos,
     }
 
     return render(request, 'publica/index.html', context) 
