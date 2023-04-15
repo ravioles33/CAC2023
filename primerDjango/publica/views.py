@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from datetime import datetime
+
 #Vistas: Crear métodos dentro de nuestro views.py para que la rutas puedan estar asociadas a un path específico y a un método que queremos que resuelva esa solicitud.
 
 # Create your views here.
@@ -9,12 +11,15 @@ def hola_mundo(request):
 
 def index(request):
     if(request.method=='GET'): #si la solicitud es por medio de GET
-        titulo = 'Titulo cuando accedo por GET'
+        titulo = 'Titulo cuando accedo por GET' #esto me manda en la variable titulo
     else:
         titulo = 'Titulo cuando por otro método'
         parametro_uno= request.GET.get('param')
         parametro_dos= request.GET.get('param2')
-    return render(request, 'publica/index.html', {'titulo':titulo})
+    return render(request, 'publica/index.html', 
+                  {'titulo':titulo,
+                   'parametro_uno':parametro_uno,
+                   'hoy':datetime.now})
 #    return HttpResponse(f""" 
 #    <h1> DALE CHE actualizado 15/4/23 <h1/>
 #    <p>{titulo}</p>
