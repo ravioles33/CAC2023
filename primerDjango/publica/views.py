@@ -19,7 +19,7 @@ def index(request):
     return render(request, 'publica/index.html', 
                   {'titulo':titulo,
                    #'parametro_uno':parametro_uno, ###Me tira error así que no lo paso
-                   'hoy':datetime.now})
+                   'hoy':datetime.now()}) #parece que las nuevas versiones piden poner .now() en vez de sólo .now
 #    return HttpResponse(f""" 
 #    <h1> DALE CHE actualizado 15/4/23 <h1/>
 #    <p>{titulo}</p>
