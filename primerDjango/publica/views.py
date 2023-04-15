@@ -8,7 +8,14 @@ def hola_mundo(request):
     return HttpResponse('Hola mundo Django')
 
 def index(request):
-    return HttpResponse('<h1> DALE CHE 2/4/23 </h1>')
+    if(request.method=='GET'): #si la solicitud es por medio de GET
+        titulo = 'Titulo cuando accedo por GET'
+    else:
+        titulo = 'Titulo cuando por otro método'
+    return HttpResponse(f""" 
+    <h1> DALE CHE actualizado 15/4/23 <h1/>
+    <p>{titulo}</p>
+    """)
 
 def saludar(request, nombre): #request es una instancia de HttpRequest
     return HttpResponse(f"""
