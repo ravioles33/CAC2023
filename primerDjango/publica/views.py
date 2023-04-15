@@ -15,3 +15,9 @@ def saludar(request, nombre): #request es una instancia de HttpRequest
         <h1>Hola {nombre} </h1>
         <p>Estoy haciendo una prueba </p>
     """)
+
+def ver_proyectos(request, anio,mes):
+    return HttpResponse(f"""
+        <h1>Proyectos del {mes}/{anio} </h1>
+        <p>Listado de proyectos</p>
+    """)    
