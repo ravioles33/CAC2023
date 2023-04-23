@@ -121,9 +121,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-
+#Busca directorio en cada aplicación con debug=true:
 STATIC_URL = '/static/'
+#Buscar directorio general con debug = true:
+STATICFILES_DIRES = [ BASE_DIR / 'static' ]
 
+#EN PRODUCCIÓN:
+#python3 manage.py collectstatic
 STATIC_ROOT = BASE_DIR / 'static_root'
 
 # Default primary key field type
