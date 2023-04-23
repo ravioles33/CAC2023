@@ -3,6 +3,9 @@ from django.http import HttpResponse
 
 from datetime import datetime
 
+from django.template import loader
+
+
 #Vistas: Crear métodos dentro de nuestro views.py para que la rutas puedan estar asociadas a un path específico y a un método que queremos que resuelva esa solicitud.
 
 # Create your views here.
@@ -40,6 +43,13 @@ def index(request):
                 'hoy':datetime.now(),#parece que las nuevas versiones piden poner .now() en vez de sólo .now
                 'cursos':listado_cursos,
     }
+
+
+def quienes_somos(request):
+    template = loader.get_template('publica/quienes_somos.html')
+    context = {'titulo':'Codo A Codo - Quienes Somos'}
+    return HttpResponse(template.render(context,request))
+
 
     return render(request, 'publica/index.html', context) 
 #    return HttpResponse(f""" 
